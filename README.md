@@ -1,6 +1,6 @@
 # HEIC to JPEG Converter
 
-Tired of Apple's Proprietory Files? Here is simple .heic to .jpeg converter that can be deployed in a docker container!
+Tired of Apple's proprietary files? Here is simple .heic to .jpeg converter that can be deployed in a docker container!
 
 The following libraries are used:
 1. pyheif
