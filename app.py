@@ -3,7 +3,7 @@ import pyheif
 import zipfile
 from PIL import Image
 from io import BytesIO
-from flask import Flask, render_template, request, send_file
+from flask import Flask, render_template, request, send_file, jsonify
 
 app = Flask(__name__)
 
@@ -40,6 +40,19 @@ def heic_to_jpeg(upload_files):
 
     return converted_files_list
 
+
+@app.route("/delete_files", methods=["POST"])
+def delete_files():
+    file_path = "./temp/files.zip"
+    response =  "No files found!"
+    if(os.path.isfile(file_path)):
+        os.remove(file_path)
+        response = "Files Deleted Successfully!"
+        print(response)
+        return jsonify({"response_text": response})
+    print(response)
+    return jsonify({"response_text": response})
+
 #root url access
 @app.route('/', methods=["GET","POST"])
 def upload():
@@ -73,4 +86,4 @@ def upload():
     return render_template("index.html")
 
 if __name__ == "__main__":
-    app.run(host = "0.0.0.0", port = 5100)
+    app.run(host = "0.0.0.0", debug = True, port = 5100)
