@@ -60,7 +60,6 @@ def upload():
     upload_files = request.files.getlist('files')
 
     if request.method == "POST":
-
         #check if files exist        
         if len(upload_files) <= 0 or upload_files[0].filename == "":
             return 'No files uploaded', 400
