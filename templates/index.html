@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        HEIC to JPEG Converter
+    </title>
+    <body>
+        <form id="uploadForm" action="/" method="post"enctype="multipart/form-data">
+            <input id="fileInput" type="file" name="file" />
+            <input type="submit" value="rm" />
+        </form>
+    </body>
+    <script>
+        let fileInput = document.getElementById("fileInput");
+        
+        dropZone.addEventListener("click", function () {
+        fileInput.click();
+      });
+    </script>
+</html>
