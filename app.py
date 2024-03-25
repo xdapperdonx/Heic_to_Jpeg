@@ -46,11 +46,12 @@ def delete_files():
     file_path = "./temp/files.zip"
     response =  "No files found!"
     if(os.path.isfile(file_path)):
+
         os.remove(file_path)
         response = "Files Deleted Successfully!"
-        print(response)
+
         return jsonify({"response_text": response})
-    print(response)
+    
     return jsonify({"response_text": response})
 
 #root url access
@@ -86,4 +87,4 @@ def upload():
     return render_template("index.html")
 
 if __name__ == "__main__":
-    app.run(host = "0.0.0.0", debug = True, port = 5100)
+    app.run(host = "0.0.0.0", port = 5100)
