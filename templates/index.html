@@ -4,16 +4,13 @@
         HEIC to JPEG Converter
     </title>
     <body>
+        <h2>
+            HEIC to JPEG Converter  
+        </h2>
         <form id="uploadForm" action="/" method="post"enctype="multipart/form-data">
-            <input id="fileInput" type="file" name="file" />
-            <input type="submit" value="rm" />
+            <input id="file" type="file" name="files" multiple="multiple"/>
+            <input type="submit" value="Upload" />
+            
         </form>
     </body>
-    <script>
-        let fileInput = document.getElementById("fileInput");
-        
-        dropZone.addEventListener("click", function () {
-        fileInput.click();
-      });
-    </script>
 </html>
